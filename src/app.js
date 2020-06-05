@@ -8,6 +8,7 @@ console.log(__dirname);
 console.log(path.join(__dirname, '../public'));
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 // public is the only directory setup to be exposed by the web server.
 // Define paths for express config
@@ -108,6 +109,6 @@ app.get('*', (req, res) => {
     })
 });
 
-app.listen(3000, () => {
-    console.log("Server is up on port 3000")
+app.listen(port, () => {
+    console.log("Server is up on port " + port)
 });
